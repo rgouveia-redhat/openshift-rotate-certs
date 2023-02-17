@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rotate-certs
+  namespace: rotate-certs
+spec:
+  imagePullPolicy: IfNotPresent
+  restartPolicy: Never
+  serviceAccount: rotate-certs
+  containers:
+  - name: rotate-certs
+    image: bastion.ocp4835.example.com:5000/rotate-certs:latest
+    env:
+    - name: API_SERVER
+      value: https://api.ocp4835.example.com:6443
+    - name: VALIDITY_THRESHHOLD
+      value: "25"
+    - name: TLS_SECRETS
+      value: openshift-kube-apiserver/internal-loadbalancer-serving-certkey,openshift-kube-apiserver/external-loadbalancer-serving-certkey
+

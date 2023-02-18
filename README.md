@@ -33,8 +33,8 @@ This will create a namespace, a service account for the app, and will add the se
 7. Configure the variables in the YAML file:
 
   - API_SERVER          : The cluster public API endpoint.
-  - TLS_SECRETS         : The list os secret in the format "ns/secret" seperated by commas.
-  - VALIDITY_THRESHHOLD : Set this value according to the peridiocity of the execution. A 30 days certificate will renew after 15 days. If you run this application every week, then a value of "40" should force the manual rotation before the cluster auto-renewal.
+  - TLS_SECRETS         : The list os secret in the format "ns/secret" separated by commas.
+  - VALIDITY_THRESHHOLD : Set this value according to the periodicity of the execution. A 30 days certificate will renew after 15 days. If you run this application every week, then a value of "40" should force the manual rotation before the cluster auto-renewal.
 
 8. Deploy the application with:
 
